@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
 
+// this might create a multi thread issue
 internal val calendar: Calendar by lazy {
     Calendar.getInstance()
 }

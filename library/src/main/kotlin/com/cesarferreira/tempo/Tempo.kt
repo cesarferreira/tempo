@@ -8,11 +8,15 @@ import java.util.Date
  * otherwise we would just use Date.java class
  */
 object Tempo {
-    val today = Date()
 
-    val tomorrow = setDate(value = 1)
+    val today: Date
+        get() = Date()
 
-    val yesterday = setDate(value = -1)
+    val tomorrow: Date
+        get() = setDate(value = 1)
+
+    val yesterday: Date
+        get() = setDate(value = -1)
 
     private fun setDate(value: Int): Date {
         calendar.time = Date()

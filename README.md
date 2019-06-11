@@ -61,7 +61,7 @@ Tempo.yesterday.isYesterday           // true
 ### Format and parse
 
 ```kotlin
-5.minutes.forward.toString("yyyy-MM-dd HH:mm:SS")
+5.minutes.forward.toString("yyyy-MM-dd HH:mm:ss")
 //=> "2019-06-11 12:05:00"
 
 "1987-06-02".toDate("yyyy-MM-dd")

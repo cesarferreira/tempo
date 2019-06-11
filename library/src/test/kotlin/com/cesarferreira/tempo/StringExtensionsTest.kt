@@ -2,9 +2,6 @@ package com.cesarferreira.tempo
 
 import org.junit.Test
 
-/**
- * Unit test for StringExtensions.kt.
- */
 class StringExtensionsTest {
 
     @Test
