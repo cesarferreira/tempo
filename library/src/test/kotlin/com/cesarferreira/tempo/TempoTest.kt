@@ -10,6 +10,7 @@ class TempoTest {
     fun `playground test`() {
 
         println(Tempo.today)
+        println(Tempo.today.with(minute = 0, hour = 0, second = 0))
         println(Tempo.yesterday)
         println(Tempo.today - 1.year)
         println(Tempo.with(year = 1990, month = 1, day = 21))

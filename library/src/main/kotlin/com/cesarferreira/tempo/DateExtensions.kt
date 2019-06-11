@@ -28,7 +28,8 @@ fun Date.with(
     day: Int = -1,
     hour: Int = -1,
     minute: Int = -1,
-    second: Int = -1
+    second: Int = -1,
+    milliseconds: Int = -1
 ): Date {
     calendar.time = this
     if (year > -1) calendar.set(Calendar.YEAR, year)
@@ -37,6 +38,7 @@ fun Date.with(
     if (hour > -1) calendar.set(Calendar.HOUR_OF_DAY, hour)
     if (minute > -1) calendar.set(Calendar.MINUTE, minute)
     if (second > -1) calendar.set(Calendar.SECOND, second)
+    if (milliseconds > -1) calendar.set(Calendar.MILLISECOND, milliseconds)
     return calendar.time
 }
 

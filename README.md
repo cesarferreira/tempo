@@ -26,7 +26,7 @@ val fiveYearsInTheFuture = 5.years.forward
 
 ```kotlin
 val birthday = Tempo.with(year = 1990, month = 1, day = 21)
-val firstCommitDate = Tempo.with(year = 2019, month = 6, day = 26, hour = 18, minute = 58, second = 31, millisecond = 777)
+val firstCommitDate = Tempo.with(year = 2019, month = 6, day = 26, hour = 18, minute = 58, second = 31, milliseconds = 777)
 ```
 
 ### Initialize by changing date components
