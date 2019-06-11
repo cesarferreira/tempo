@@ -32,8 +32,8 @@ object Tempo {
         hour: Int = -1,
         minute: Int = -1,
         second: Int = -1,
-        milliseconds: Int = -1
+        millisecond: Int = -1
     ): Date {
-        return Date().with(year, month, day, hour, minute, second, milliseconds)
+        return Date().with(year, month, day, hour, minute, second, millisecond)
     }
 }

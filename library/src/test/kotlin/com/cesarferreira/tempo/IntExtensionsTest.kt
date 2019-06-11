@@ -77,4 +77,14 @@ class IntExtensionsTest {
     fun seconds() {
         assertEquals(expected = TimeInterval(unit = Calendar.SECOND, value = 15), actual = 15.seconds)
     }
+
+    @Test
+    fun millisecond() {
+        assertEquals(expected = TimeInterval(unit = Calendar.MILLISECOND, value = 1), actual = 1.millisecond)
+    }
+
+    @Test
+    fun milliseconds() {
+        assertEquals(expected = TimeInterval(unit = Calendar.MILLISECOND, value = 15), actual = 15.milliseconds)
+    }
 }

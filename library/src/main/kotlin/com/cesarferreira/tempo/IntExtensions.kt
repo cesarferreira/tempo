@@ -43,3 +43,9 @@ val Int.second: TimeInterval
 
 val Int.seconds: TimeInterval
     get() = second
+
+val Int.millisecond: TimeInterval
+    get() = TimeInterval(unit = Calendar.MILLISECOND, value = this)
+
+val Int.milliseconds: TimeInterval
+    get() = millisecond

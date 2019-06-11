@@ -14,6 +14,8 @@ class TempoTest {
         println(Tempo.yesterday)
         println(Tempo.today - 1.year)
         println(Tempo.with(year = 1990, month = 1, day = 21))
+        println(15.seconds.value)
+        println("2016-06-14".toDate("yyyy-MM-dd"))
 
         1 `should be equal to` 1
     }
