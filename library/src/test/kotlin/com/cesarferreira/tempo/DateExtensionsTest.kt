@@ -2,6 +2,7 @@ package com.cesarferreira.tempo
 
 import org.amshove.kluent.shouldBe
 import org.junit.Assert
+import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -278,10 +279,20 @@ class DateExtensionsTest {
     @Test
     fun compareTo() {
         run {
-            Assert.assertTrue(1.day.ago < Tempo.today)
+            assertTrue(1.day.ago < Tempo.today)
         }
         run {
-            Assert.assertTrue(1.day.forward > Tempo.today)
+            assertTrue(1.day.forward > Tempo.today)
+        }
+    }
+
+    @Test
+    fun `compare inside ranges`() {
+        run {
+            assertTrue(1.day.ago > 2.days.ago)
+        }
+        run {
+            assertTrue(1.day.ago in 2.days.ago..Tempo.today)
         }
     }
 }
