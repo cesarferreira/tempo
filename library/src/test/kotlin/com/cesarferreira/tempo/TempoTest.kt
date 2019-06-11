@@ -1,13 +1,13 @@
 package com.cesarferreira.tempo
 
 import org.amshove.kluent.`should be equal to`
-import org.amshove.kluent.shouldBe
 import org.junit.Test
+import java.util.Date
 
 class TempoTest {
 
     @Test
-    fun `some test`() {
+    fun `playground test`() {
 
         println(Tempo.today)
         println(Tempo.yesterday)
@@ -18,20 +18,9 @@ class TempoTest {
     }
 
     @Test
-    fun `is date today?`() {
-        val date = Tempo.today
-        date.isToday shouldBe true
-    }
-
-    @Test
-    fun `is date yesterday?`() {
-        val date = Tempo.today - 1.day
-        date.isYesterday shouldBe true
-    }
-
-    @Test
-    fun `is date tomorrow?`() {
-        val date = Tempo.tomorrow
-        date.isTomorrow shouldBe true
+    fun `is date 2 hours in the future?`() {
+        val date = Tempo.today + 2.hours
+        val future = Date().addHours(2)
+        assertEquals(expected = date, actual = future)
     }
 }

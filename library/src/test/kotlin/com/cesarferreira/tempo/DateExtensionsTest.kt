@@ -1,5 +1,6 @@
 package com.cesarferreira.tempo
 
+import org.amshove.kluent.shouldBe
 import org.junit.Assert
 import org.junit.Test
 import java.text.SimpleDateFormat
@@ -254,6 +255,24 @@ class DateExtensionsTest {
             val date = calendar.time
             assert(!date.isSaturday)
         }
+    }
+
+    @Test
+    fun `is date today?`() {
+        val date = Tempo.today
+        date.isToday shouldBe true
+    }
+
+    @Test
+    fun `is date yesterday?`() {
+        val date = Tempo.today - 1.day
+        date.isYesterday shouldBe true
+    }
+
+    @Test
+    fun `is date tomorrow?`() {
+        val date = Tempo.tomorrow
+        date.isTomorrow shouldBe true
     }
 
     @Test
