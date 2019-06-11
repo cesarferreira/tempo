@@ -5,8 +5,9 @@ import java.util.Date
 
 /**
  * NOTE: In Kotlin you can't add companion object extensions to existing Java class.
+ * otherwise we would just use Date.java class
  */
-object Dates {
+object Tempo {
     val today = Date()
 
     val tomorrow = setDate(value = 1)

@@ -9,13 +9,13 @@ An intuitive Date extensions in Kotlin.
 ### Add durations to date
 
 ```kotlin
-val today = Dates.today
+val today = Tempo.today
 val nextWeek = today + 1.week
 val dayBeforeYesterday = today - 2.days
 
 // shortcuts #1
-val tomorrow = Dates.tomorrow
-val yesterday = Dates.yesterday
+val tomorrow = Tempo.tomorrow
+val yesterday = Tempo.yesterday
 
 // shortcuts #2
 val yesterday = 1.days.ago
@@ -25,14 +25,14 @@ val fiveYearsSince = 5.years.since
 ### Initialize by specifying date components
 
 ```kotlin
-val birthday = Dates.of(year = 1990, month = 1, day = 21)
-val firstCommitDate = Dates.of(year = 2016, month = 2, day = 26, hour = 18, minute = 58, second = 31, millisecond = 777)
+val birthday = Tempo.of(year = 1990, month = 1, day = 21)
+val firstCommitDate = Tempo.of(year = 2016, month = 2, day = 26, hour = 18, minute = 58, second = 31, millisecond = 777)
 ```
 
 ### Initialize by changing date components
 
 ```kotlin
-val today = Dates.today
+val today = Tempo.today
 val christmas = today.with(month = 12, day = 25)
 val thisSunday = today.with(weekday = 1)
 
@@ -44,7 +44,7 @@ val newYearsEve = today.endOfYear
 ### Check day of the week
 
 ```kotlin
-Dates.today.isFriday() // false
+Tempo.today.isFriday() // false
 ```
 
 ### Format and parse
@@ -54,14 +54,21 @@ Dates.today.isFriday() // false
 //=> "2015-03-01 12:05:00"
 
 "1987-06-02".toDate("yyyy-MM-dd")
-//=> Dates.of(year = 1987, month = 6, day = 2)
+//=> Tempo.of(year = 1987, month = 6, day = 2)
 ```
 
 ### Compare dates
 
 ```kotlin
-1.day.ago > 2.days.ago // true
-1.day.ago in 2.days.ago..Dates.today // true
+1.day.ago > 2.days.ago                  // true
+1.day.ago in 2.days.ago..Tempo.today    // true
+
+Tempo.today.isToday()                   // true
+Date().isToday()                        // true
+Tempo.tomorrow.isToday()                // false
+Tempo.tomorrow.isTomorrow()             // true
+Tempo.yesterday.isYesterday()           // true
+
 ```
 
 ## Install
@@ -76,7 +83,7 @@ dependencies {
 
 ## Notice
 
-- tempo is definitely inspired by [naoty/Timepiece(Swift)](https://github.com/naoty/Timepiece).
+- tempo is inspired by [naoty/Timepiece(Swift)](https://github.com/naoty/Timepiece), the now unmaintained [hotchemi/khronos](https://github.com/hotchemi/khronos).
 
 ## Licence
 

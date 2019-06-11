@@ -15,7 +15,7 @@ class DateExtensionsTest {
         val calendar = Calendar.getInstance()
         calendar.add(Calendar.WEEK_OF_MONTH, 1)
         val nextWeek = calendar.time
-        assertEquals(expected = nextWeek, actual = Dates.today + 1.week)
+        assertEquals(expected = nextWeek, actual = Tempo.today + 1.week)
     }
 
     @Test
@@ -23,22 +23,22 @@ class DateExtensionsTest {
         val calendar = Calendar.getInstance()
         calendar.add(Calendar.DAY_OF_MONTH, -2)
         val dayBeforeYesterday = calendar.time
-        assertEquals(expected = dayBeforeYesterday, actual = Dates.today - 2.days)
+        assertEquals(expected = dayBeforeYesterday, actual = Tempo.today - 2.days)
     }
 
     @Test
     fun with() {
         run {
-            val date = Dates.with(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0)
+            val date = Tempo.with(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0)
             assertEquals(
-                expected = Dates.with(year = 1990, month = 6, day = 2, hour = 12, minute = 0, second = 0),
+                expected = Tempo.with(year = 1990, month = 6, day = 2, hour = 12, minute = 0, second = 0),
                 actual = date.with(year = 1990)
             )
         }
         run {
-            val date = Dates.with(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0)
+            val date = Tempo.with(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0)
             assertEquals(
-                expected = Dates.with(year = 1987, month = 6, day = 9, hour = 12, minute = 0, second = 0),
+                expected = Tempo.with(year = 1987, month = 6, day = 9, hour = 12, minute = 0, second = 0),
                 actual = date.with(weekday = 2)
             )
         }
@@ -46,90 +46,90 @@ class DateExtensionsTest {
 
     @Test
     fun beginningOfYear() {
-        val date = Dates.with(year = 2016, month = 6, day = 2, hour = 5, minute = 30, second = 0)
+        val date = Tempo.with(year = 2016, month = 6, day = 2, hour = 5, minute = 30, second = 0)
         assertEquals(
-            expected = Dates.with(year = 2016, month = 1, day = 1, hour = 0, minute = 0, second = 0),
+            expected = Tempo.with(year = 2016, month = 1, day = 1, hour = 0, minute = 0, second = 0),
             actual = date.beginningOfYear
         )
     }
 
     @Test
     fun endOfYear() {
-        val date = Dates.with(year = 1987, month = 6, day = 2, hour = 5, minute = 0, second = 0)
+        val date = Tempo.with(year = 1987, month = 6, day = 2, hour = 5, minute = 0, second = 0)
         assertEquals(
-            expected = Dates.with(year = 1987, month = 12, day = 31, hour = 23, minute = 59, second = 59),
+            expected = Tempo.with(year = 1987, month = 12, day = 31, hour = 23, minute = 59, second = 59),
             actual = date.endOfYear
         )
     }
 
     @Test
     fun beginningOfMonth() {
-        val date = Dates.with(year = 1987, month = 6, day = 2, hour = 5, minute = 0, second = 0)
+        val date = Tempo.with(year = 1987, month = 6, day = 2, hour = 5, minute = 0, second = 0)
         assertEquals(
-            expected = Dates.with(year = 1987, month = 6, day = 1, hour = 0, minute = 0, second = 0),
+            expected = Tempo.with(year = 1987, month = 6, day = 1, hour = 0, minute = 0, second = 0),
             actual = date.beginningOfMonth
         )
     }
 
     @Test
     fun endOfMonth() {
-        val date = Dates.with(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0)
+        val date = Tempo.with(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0)
         assertEquals(
-            expected = Dates.with(year = 1987, month = 6, day = 30, hour = 23, minute = 59, second = 59),
+            expected = Tempo.with(year = 1987, month = 6, day = 30, hour = 23, minute = 59, second = 59),
             actual = date.endOfMonth
         )
     }
 
     @Test
     fun beginningOfDay() {
-        val date = Dates.with(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0)
+        val date = Tempo.with(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0)
         assertEquals(
-            expected = Dates.with(year = 1987, month = 6, day = 2, hour = 0, minute = 0, second = 0),
+            expected = Tempo.with(year = 1987, month = 6, day = 2, hour = 0, minute = 0, second = 0),
             actual = date.beginningOfDay
         )
     }
 
     @Test
     fun endOfDay() {
-        val date = Dates.with(year = 1987, month = 6, day = 2, hour = 9, minute = 0, second = 0)
+        val date = Tempo.with(year = 1987, month = 6, day = 2, hour = 9, minute = 0, second = 0)
         assertEquals(
-            expected = Dates.with(year = 1987, month = 6, day = 2, hour = 23, minute = 59, second = 59),
+            expected = Tempo.with(year = 1987, month = 6, day = 2, hour = 23, minute = 59, second = 59),
             actual = date.endOfDay
         )
     }
 
     @Test
     fun beginningOfHour() {
-        val date = Dates.with(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 30)
+        val date = Tempo.with(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 30)
         assertEquals(
-            expected = Dates.with(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0),
+            expected = Tempo.with(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0),
             actual = date.beginningOfHour
         )
     }
 
     @Test
     fun endOfHour() {
-        val date = Dates.with(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 30)
+        val date = Tempo.with(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 30)
         assertEquals(
-            expected = Dates.with(year = 1987, month = 6, day = 2, hour = 12, minute = 59, second = 59),
+            expected = Tempo.with(year = 1987, month = 6, day = 2, hour = 12, minute = 59, second = 59),
             actual = date.endOfHour
         )
     }
 
     @Test
     fun beginningOfMinute() {
-        val date = Dates.with(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 30)
+        val date = Tempo.with(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 30)
         assertEquals(
-            expected = Dates.with(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 0),
+            expected = Tempo.with(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 0),
             actual = date.beginningOfMinute
         )
     }
 
     @Test
     fun endOfMinute() {
-        val date = Dates.with(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 30)
+        val date = Tempo.with(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 30)
         assertEquals(
-            expected = Dates.with(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 59),
+            expected = Tempo.with(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 59),
             actual = date.endOfMinute
         )
     }
@@ -259,10 +259,10 @@ class DateExtensionsTest {
     @Test
     fun compareTo() {
         run {
-            Assert.assertTrue(1.day.ago < Dates.today)
+            Assert.assertTrue(1.day.ago < Tempo.today)
         }
         run {
-            Assert.assertTrue(1.day.since > Dates.today)
+            Assert.assertTrue(1.day.since > Tempo.today)
         }
     }
 }

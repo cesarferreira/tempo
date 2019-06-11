@@ -2,7 +2,6 @@ package com.cesarferreira.tempo
 
 import org.junit.Test
 import java.util.Calendar
-import kotlin.test.assertEquals
 
 /**
  * Unit test for IntExtensions.

@@ -15,7 +15,7 @@ publish {
     userOrg = 'cesarferreira'
     groupId = 'com.github.cesarferreira'
     artifactId = 'tempo'
-    publishVersion = '0.2.1'
+    publishVersion = '0.3.0'
     desc = 'An intuitive Date extensions in Kotlin.'
     website = 'https://github.com/cesarferreira/tempo'
 }
