@@ -1,0 +1,42 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+apply plugin: 'com.novoda.bintray-release'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.9.1'
+    }
+}
+
+publish {
+    userOrg = 'cesarferreira'
+    groupId = 'com.github.cesarferreira'
+    artifactId = 'seguro'
+    publishVersion = '0.2.0'
+    desc = 'An intuitive Date extensions in Kotlin.'
+    website = 'https://github.com/cesarferreira/tempo'
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    // tests
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.amshove.kluent:kluent:1.47'
+    testImplementation 'com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0'
+
+}
+
+test {
+    testLogging {
+        events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
+        outputs.upToDateWhen {
+            false
+        }
+        showStandardStreams = true
+    }
+}
