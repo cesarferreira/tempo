@@ -37,41 +37,41 @@ class DatesTest {
     fun dateYear() {
         val calendar = Calendar.getInstance()
         calendar.set(Calendar.YEAR, 1990)
-        assertEquals(expected = calendar.time, actual = Dates.of(year = 1990))
+        assertEquals(expected = calendar.time, actual = Dates.with(year = 1990))
     }
 
     @Test
     fun dateMonth() {
         val calendar = Calendar.getInstance()
         calendar.set(Calendar.MONTH, 0)
-        assertEquals(expected = calendar.time, actual = Dates.of(month = 1))
+        assertEquals(expected = calendar.time, actual = Dates.with(month = 1))
     }
 
     @Test
     fun dateDay() {
         val calendar = Calendar.getInstance()
         calendar.set(Calendar.DATE, 21)
-        assertEquals(expected = calendar.time, actual = Dates.of(day = 21))
+        assertEquals(expected = calendar.time, actual = Dates.with(day = 21))
     }
 
     @Test
     fun dateHour() {
         val calendar = Calendar.getInstance()
         calendar.set(Calendar.HOUR_OF_DAY, 4)
-        assertEquals(expected = calendar.time, actual = Dates.of(hour = 4))
+        assertEquals(expected = calendar.time, actual = Dates.with(hour = 4))
     }
 
     @Test
     fun dateMinute() {
         val calendar = Calendar.getInstance()
         calendar.set(Calendar.MINUTE, 30)
-        assertEquals(expected = calendar.time, actual = Dates.of(minute = 30))
+        assertEquals(expected = calendar.time, actual = Dates.with(minute = 30))
     }
 
     @Test
     fun dateSecond() {
         val calendar = Calendar.getInstance()
         calendar.set(Calendar.SECOND, 10)
-        assertEquals(expected = calendar.time, actual = Dates.of(second = 10))
+        assertEquals(expected = calendar.time, actual = Dates.with(second = 10))
     }
 }
