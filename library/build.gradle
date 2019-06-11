@@ -14,8 +14,8 @@ buildscript {
 publish {
     userOrg = 'cesarferreira'
     groupId = 'com.github.cesarferreira'
-    artifactId = 'seguro'
-    publishVersion = '0.2.0'
+    artifactId = 'tempo'
+    publishVersion = '0.2.1'
     desc = 'An intuitive Date extensions in Kotlin.'
     website = 'https://github.com/cesarferreira/tempo'
 }
