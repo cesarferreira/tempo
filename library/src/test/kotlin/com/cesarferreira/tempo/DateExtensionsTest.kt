@@ -141,7 +141,7 @@ class DateExtensionsTest {
         calendar.set(Calendar.MINUTE, calendar.get(Calendar.MINUTE) + 5)
         Assert.assertEquals(
             SimpleDateFormat("yyyy-MM-dd HH").format(calendar.time),
-            5.minutes.since.toString("yyyy-MM-dd HH")
+            5.minutes.forward.toString("yyyy-MM-dd HH")
         )
     }
 
@@ -281,7 +281,7 @@ class DateExtensionsTest {
             Assert.assertTrue(1.day.ago < Tempo.today)
         }
         run {
-            Assert.assertTrue(1.day.since > Tempo.today)
+            Assert.assertTrue(1.day.forward > Tempo.today)
         }
     }
 }

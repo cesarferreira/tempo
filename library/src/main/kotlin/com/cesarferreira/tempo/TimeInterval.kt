@@ -6,7 +6,7 @@ import java.util.Objects
 class TimeInterval(internal val unit: Int, internal val value: Int) {
     val ago = calculate(from = Date(), value = -value)
 
-    val since = calculate(from = Date(), value = value)
+    val forward = calculate(from = Date(), value = value)
 
     private fun calculate(from: Date, value: Int): Date {
         calendar.time = from

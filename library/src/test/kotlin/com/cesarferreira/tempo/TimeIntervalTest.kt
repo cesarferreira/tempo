@@ -21,6 +21,6 @@ class TimeIntervalTest {
         val calendar = Calendar.getInstance()
         calendar.add(Calendar.YEAR, 5)
         val fiveYearsLater = calendar.time
-        assertEquals(expected = fiveYearsLater, actual = 5.years.since)
+        assertEquals(expected = fiveYearsLater, actual = 5.years.forward)
     }
 }

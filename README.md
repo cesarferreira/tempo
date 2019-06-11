@@ -19,14 +19,14 @@ val yesterday = Tempo.yesterday
 
 // shortcuts #2
 val yesterday = 1.days.ago
-val fiveYearsSince = 5.years.since
+val fiveYearsInTheFuture = 5.years.forward
 ```
 
 ### Initialize by specifying date components
 
 ```kotlin
 val birthday = Tempo.with(year = 1990, month = 1, day = 21)
-val firstCommitDate = Tempo.with(year = 2016, month = 2, day = 26, hour = 18, minute = 58, second = 31, millisecond = 777)
+val firstCommitDate = Tempo.with(year = 2019, month = 6, day = 26, hour = 18, minute = 58, second = 31, millisecond = 777)
 ```
 
 ### Initialize by changing date components
@@ -61,7 +61,7 @@ Tempo.yesterday.isYesterday           // true
 ### Format and parse
 
 ```kotlin
-5.minutes.since.toString("yyyy-MM-dd HH:mm:SS")
+5.minutes.forward.toString("yyyy-MM-dd HH:mm:SS")
 //=> "2019-06-11 12:05:00"
 
 "1987-06-02".toDate("yyyy-MM-dd")
