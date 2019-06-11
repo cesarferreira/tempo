@@ -8,13 +8,13 @@ internal val calendar: Calendar by lazy {
     Calendar.getInstance()
 }
 
-operator fun Date.plus(duration: Duration): Date {
+operator fun Date.plus(duration: TimeInterval): Date {
     calendar.time = this
     calendar.add(duration.unit, duration.value)
     return calendar.time
 }
 
-operator fun Date.minus(duration: Duration): Date {
+operator fun Date.minus(duration: TimeInterval): Date {
     calendar.time = this
     calendar.add(duration.unit, -duration.value)
     return calendar.time
@@ -84,37 +84,65 @@ val Date.endOfMinute: Date
 
 fun Date.toString(format: String): String = SimpleDateFormat(format).format(this)
 
-fun Date.isSunday(): Boolean {
-    calendar.time = this
-    return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY
-}
+val Date.isSunday: Boolean
+    get() {
+        calendar.time = this
+        return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY
+    }
 
-fun Date.isMonday(): Boolean {
-    calendar.time = this
-    return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY
-}
+val Date.isMonday: Boolean
+    get() {
+        calendar.time = this
+        return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY
+    }
 
-fun Date.isTuesday(): Boolean {
-    calendar.time = this
-    return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY
-}
+val Date.isTuesday: Boolean
+    get() {
+        calendar.time = this
+        return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY
+    }
 
-fun Date.isWednesday(): Boolean {
-    calendar.time = this
-    return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.WEDNESDAY
-}
+val Date.isWednesday: Boolean
+    get() {
+        calendar.time = this
+        return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.WEDNESDAY
+    }
 
-fun Date.isThursday(): Boolean {
-    calendar.time = this
-    return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.THURSDAY
-}
+val Date.isThursday: Boolean
+    get() {
+        calendar.time = this
+        return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.THURSDAY
+    }
 
-fun Date.isFriday(): Boolean {
-    calendar.time = this
-    return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY
-}
+val Date.isFriday: Boolean
+    get() {
+        calendar.time = this
+        return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY
+    }
 
-fun Date.isSaturday(): Boolean {
-    calendar.time = this
-    return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY
+val Date.isSaturday: Boolean
+    get() {
+        calendar.time = this
+        return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY
+    }
+
+val Date.isToday: Boolean
+    get() = isDateIn(this, 0)
+
+val Date.isYesterday: Boolean
+    get() = isDateIn(this, -1)
+
+val Date.isTomorrow: Boolean
+    get() = isDateIn(this, 1)
+
+private fun isDateIn(date: Date, variable: Int = 0): Boolean {
+    val now = Calendar.getInstance()
+    val cdate = Calendar.getInstance()
+    cdate.timeInMillis = date.time
+
+    now.add(Calendar.DATE, variable)
+
+    return (now.get(Calendar.YEAR) == cdate.get(Calendar.YEAR)
+        && now.get(Calendar.MONTH) == cdate.get(Calendar.MONTH)
+        && now.get(Calendar.DATE) == cdate.get(Calendar.DATE))
 }

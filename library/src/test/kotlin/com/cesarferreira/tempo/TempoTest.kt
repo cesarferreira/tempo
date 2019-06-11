@@ -10,7 +10,7 @@ class TempoTest {
     fun `some test`() {
 
         println(Tempo.today)
-        println(Tempo.today - 1.day)
+        println(Tempo.yesterday)
         println(Tempo.today - 1.year)
         println(Tempo.with(year = 1990, month = 1, day = 21))
 
@@ -20,18 +20,18 @@ class TempoTest {
     @Test
     fun `is date today?`() {
         val date = Tempo.today
-        date.isToday() shouldBe true
+        date.isToday shouldBe true
     }
 
     @Test
     fun `is date yesterday?`() {
         val date = Tempo.today - 1.day
-        date.isYesterday() shouldBe true
+        date.isYesterday shouldBe true
     }
 
     @Test
     fun `is date tomorrow?`() {
         val date = Tempo.tomorrow
-        date.isTomorrow() shouldBe true
+        date.isTomorrow shouldBe true
     }
 }

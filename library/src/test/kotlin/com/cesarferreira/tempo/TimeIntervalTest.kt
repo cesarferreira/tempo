@@ -4,9 +4,9 @@ import org.junit.Test
 import java.util.Calendar
 
 /**
- * Unit test for [Duration].
+ * Unit test for [TimeInterval].
  */
-class DurationTest {
+class TimeIntervalTest {
 
     @Test
     fun ago() {

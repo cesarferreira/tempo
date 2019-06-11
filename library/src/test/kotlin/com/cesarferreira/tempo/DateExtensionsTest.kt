@@ -150,13 +150,13 @@ class DateExtensionsTest {
             val calendar = Calendar.getInstance()
             calendar.set(2016, 1, 21)
             val date = calendar.time
-            assert(date.isSunday())
+            assert(date.isSunday)
         }
         run {
             val calendar = Calendar.getInstance()
             calendar.set(2016, 1, 22)
             val date = calendar.time
-            assert(!date.isSunday())
+            assert(!date.isSunday)
         }
     }
 
@@ -166,13 +166,13 @@ class DateExtensionsTest {
             val calendar = Calendar.getInstance()
             calendar.set(2016, 1, 22)
             val date = calendar.time
-            assert(date.isMonday())
+            assert(date.isMonday)
         }
         run {
             val calendar = Calendar.getInstance()
             calendar.set(2016, 1, 23)
             val date = calendar.time
-            assert(!date.isMonday())
+            assert(!date.isMonday)
         }
     }
 
@@ -182,13 +182,13 @@ class DateExtensionsTest {
             val calendar = Calendar.getInstance()
             calendar.set(2016, 1, 23)
             val date = calendar.time
-            assert(date.isTuesday())
+            assert(date.isTuesday)
         }
         run {
             val calendar = Calendar.getInstance()
             calendar.set(2016, 1, 24)
             val date = calendar.time
-            assert(!date.isTuesday())
+            assert(!date.isTuesday)
         }
     }
 
@@ -198,13 +198,13 @@ class DateExtensionsTest {
             val calendar = Calendar.getInstance()
             calendar.set(2016, 1, 24)
             val date = calendar.time
-            assert(date.isWednesday())
+            assert(date.isWednesday)
         }
         run {
             val calendar = Calendar.getInstance()
             calendar.set(2016, 1, 25)
             val date = calendar.time
-            assert(!date.isWednesday())
+            assert(!date.isWednesday)
         }
     }
 
@@ -214,13 +214,13 @@ class DateExtensionsTest {
             val calendar = Calendar.getInstance()
             calendar.set(2016, 1, 25)
             val date = calendar.time
-            assert(date.isThursday())
+            assert(date.isThursday)
         }
         run {
             val calendar = Calendar.getInstance()
             calendar.set(2016, 1, 26)
             val date = calendar.time
-            assert(!date.isThursday())
+            assert(!date.isThursday)
         }
     }
 
@@ -230,13 +230,13 @@ class DateExtensionsTest {
             val calendar = Calendar.getInstance()
             calendar.set(2016, 1, 26)
             val date = calendar.time
-            assert(date.isFriday())
+            assert(date.isFriday)
         }
         run {
             val calendar = Calendar.getInstance()
             calendar.set(2016, 1, 27)
             val date = calendar.time
-            assert(!date.isFriday())
+            assert(!date.isFriday)
         }
     }
 
@@ -246,13 +246,13 @@ class DateExtensionsTest {
             val calendar = Calendar.getInstance()
             calendar.set(2016, 1, 27)
             val date = calendar.time
-            assert(date.isSaturday())
+            assert(date.isSaturday)
         }
         run {
             val calendar = Calendar.getInstance()
             calendar.set(2016, 1, 28)
             val date = calendar.time
-            assert(!date.isSaturday())
+            assert(!date.isSaturday)
         }
     }
 

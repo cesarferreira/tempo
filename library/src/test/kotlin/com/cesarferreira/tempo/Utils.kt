@@ -7,6 +7,6 @@ fun assertEquals(expected: Date, actual: Date) {
     Assert.assertEquals(expected.toString(), actual.toString())
 }
 
-fun assertEquals(expected: Duration, actual: Duration) {
+fun assertEquals(expected: TimeInterval, actual: TimeInterval) {
     Assert.assertEquals(expected, actual)
 }

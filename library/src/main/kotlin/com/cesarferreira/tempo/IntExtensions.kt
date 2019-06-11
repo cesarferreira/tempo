@@ -2,44 +2,44 @@ package com.cesarferreira.tempo
 
 import java.util.Calendar
 
-val Int.year: Duration
-    get() = Duration(unit = Calendar.YEAR, value = this)
+val Int.year: TimeInterval
+    get() = TimeInterval(unit = Calendar.YEAR, value = this)
 
-val Int.years: Duration
+val Int.years: TimeInterval
     get() = year
 
-val Int.month: Duration
-    get() = Duration(unit = Calendar.MONTH, value = this - 1)
+val Int.month: TimeInterval
+    get() = TimeInterval(unit = Calendar.MONTH, value = this - 1)
 
-val Int.months: Duration
+val Int.months: TimeInterval
     get() = month
 
-val Int.week: Duration
-    get() = Duration(unit = Calendar.WEEK_OF_MONTH, value = this)
+val Int.week: TimeInterval
+    get() = TimeInterval(unit = Calendar.WEEK_OF_MONTH, value = this)
 
-val Int.weeks: Duration
+val Int.weeks: TimeInterval
     get() = week
 
-val Int.day: Duration
-    get() = Duration(unit = Calendar.DATE, value = this)
+val Int.day: TimeInterval
+    get() = TimeInterval(unit = Calendar.DATE, value = this)
 
-val Int.days: Duration
+val Int.days: TimeInterval
     get() = day
 
-val Int.hour: Duration
-    get() = Duration(unit = Calendar.HOUR_OF_DAY, value = this)
+val Int.hour: TimeInterval
+    get() = TimeInterval(unit = Calendar.HOUR_OF_DAY, value = this)
 
-val Int.hours: Duration
+val Int.hours: TimeInterval
     get() = hour
 
-val Int.minute: Duration
-    get() = Duration(unit = Calendar.MINUTE, value = this)
+val Int.minute: TimeInterval
+    get() = TimeInterval(unit = Calendar.MINUTE, value = this)
 
-val Int.minutes: Duration
+val Int.minutes: TimeInterval
     get() = minute
 
-val Int.second: Duration
-    get() = Duration(unit = Calendar.SECOND, value = this)
+val Int.second: TimeInterval
+    get() = TimeInterval(unit = Calendar.SECOND, value = this)
 
-val Int.seconds: Duration
+val Int.seconds: TimeInterval
     get() = second

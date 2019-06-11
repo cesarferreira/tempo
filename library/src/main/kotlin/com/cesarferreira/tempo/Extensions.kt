@@ -22,21 +22,3 @@ private fun manipulateTime(currentTime: Long, amount: Int, calendarField: Int, i
     return calendar.timeInMillis
 }
 
-// is tomorrow
-// is yesterday
-
-fun Date.isToday(): Boolean = isDateIn(this, 0)
-fun Date.isYesterday(): Boolean = isDateIn(this, -1)
-fun Date.isTomorrow(): Boolean = isDateIn(this, 1)
-
-private fun isDateIn(date: Date, variable: Int = 0): Boolean {
-    val now = Calendar.getInstance()
-    val cdate = Calendar.getInstance()
-    cdate.timeInMillis = date.time
-
-    now.add(Calendar.DATE, variable)
-
-    return (now.get(Calendar.YEAR) == cdate.get(Calendar.YEAR)
-        && now.get(Calendar.MONTH) == cdate.get(Calendar.MONTH)
-        && now.get(Calendar.DATE) == cdate.get(Calendar.DATE))
-}
