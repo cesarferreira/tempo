@@ -34,9 +34,7 @@ dependencies {
 test {
     testLogging {
         events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
-        outputs.upToDateWhen {
-            false
-        }
+        outputs.upToDateWhen { false }
         showStandardStreams = true
     }
 }

@@ -1,5 +1,6 @@
 package com.cesarferreira.tempo
 
+import org.amshove.kluent.`should be equal to`
 import org.junit.Test
 
 class TempoTest {
@@ -11,6 +12,6 @@ class TempoTest {
         println(Dates.today - 1.year)
         println(Dates.of(year = 1990, month = 1, day = 21))
 
-        // 1 `should be equal to` today
+        1 `should be equal to` 1
     }
 }
