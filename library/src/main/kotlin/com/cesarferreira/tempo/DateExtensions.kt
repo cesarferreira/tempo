@@ -4,18 +4,15 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
 
-// this might create a multi thread issue
-internal val calendar: Calendar by lazy {
-    Calendar.getInstance()
-}
-
 operator fun Date.plus(duration: TimeInterval): Date {
+    val calendar = Calendar.getInstance()
     calendar.time = this
     calendar.add(duration.unit, duration.value)
     return calendar.time
 }
 
 operator fun Date.minus(duration: TimeInterval): Date {
+    val calendar = Calendar.getInstance()
     calendar.time = this
     calendar.add(duration.unit, -duration.value)
     return calendar.time
@@ -32,6 +29,7 @@ fun Date.with(
     second: Int = -1,
     milliseconds: Int = -1
 ): Date {
+    val calendar = Calendar.getInstance()
     calendar.time = this
     if (year > -1) calendar.set(Calendar.YEAR, year)
     if (month > 0) calendar.set(Calendar.MONTH, month - 1)
@@ -44,6 +42,7 @@ fun Date.with(
 }
 
 fun Date.with(weekday: Int = -1): Date {
+    val calendar = Calendar.getInstance()
     calendar.time = this
     if (weekday > -1) calendar.set(Calendar.WEEK_OF_MONTH, weekday)
     return calendar.time
@@ -62,6 +61,7 @@ val Date.endOfMonth: Date
     get() = endOfMonth()
 
 fun Date.endOfMonth(): Date {
+    val calendar = Calendar.getInstance()
     calendar.time = this
     val lastDay = calendar.getActualMaximum(Calendar.DATE)
     return with(day = lastDay, hour = 23, minute = 59, second = 59)
@@ -89,42 +89,49 @@ fun Date.toString(format: String): String = SimpleDateFormat(format).format(this
 
 val Date.isSunday: Boolean
     get() {
+        val calendar = Calendar.getInstance()
         calendar.time = this
         return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY
     }
 
 val Date.isMonday: Boolean
     get() {
+        val calendar = Calendar.getInstance()
         calendar.time = this
         return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY
     }
 
 val Date.isTuesday: Boolean
     get() {
+        val calendar = Calendar.getInstance()
         calendar.time = this
         return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY
     }
 
 val Date.isWednesday: Boolean
     get() {
+        val calendar = Calendar.getInstance()
         calendar.time = this
         return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.WEDNESDAY
     }
 
 val Date.isThursday: Boolean
     get() {
+        val calendar = Calendar.getInstance()
         calendar.time = this
         return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.THURSDAY
     }
 
 val Date.isFriday: Boolean
     get() {
+        val calendar = Calendar.getInstance()
         calendar.time = this
         return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY
     }
 
 val Date.isSaturday: Boolean
     get() {
+        val calendar = Calendar.getInstance()
         calendar.time = this
         return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY
     }

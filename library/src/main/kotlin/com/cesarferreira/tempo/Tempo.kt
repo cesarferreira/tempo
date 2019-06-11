@@ -19,6 +19,7 @@ object Tempo {
         get() = setDate(value = -1)
 
     private fun setDate(value: Int): Date {
+        val calendar = Calendar.getInstance()
         calendar.time = Date()
         calendar.add(Calendar.DATE, value)
         return calendar.time
