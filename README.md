@@ -1,13 +1,13 @@
 # tempo
+> **Kotlin** intuitive `java.util.Date` extensions.
 
 [![Build Status](https://travis-ci.org/cesarferreira/tempo.svg?branch=master)](https://travis-ci.org/cesarferreira/tempo) [![Download](https://api.bintray.com/packages/cesarferreira/maven/tempo/images/download.svg) ](https://bintray.com/cesarferreira/maven/tempo/_latestVersion) [![License](https://img.shields.io/badge/license-APACHE2-green.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
-Kotlin intuitive Date extensions.
 
 ## Usage
 
 ```kotlin
-val today : Date = Tempo.today          //=> today
+val today: Date = Tempo.today           //=> today
 today + 1.week                          //=> next week 
 today - 2.days                          //=> day before yesterday
 today + (3.weeks - 4.days + 5.hours)    //=> somewhere in 2 and a half weeks
