@@ -1,6 +1,8 @@
 package com.cesarferreira.tempo
 
 import org.amshove.kluent.`should be equal to`
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.util.Date
 
@@ -25,5 +27,13 @@ class TempoTest {
         val date = Tempo.today + 2.hours
         val future = Date().addHours(2)
         assertEquals(expected = date, actual = future)
+    }
+
+    @Test
+    fun `Date properties`() {
+        assertTrue(Tempo.today.isToday) // true
+        assertFalse(Tempo.tomorrow.isToday) // false
+        assertTrue(Tempo.tomorrow.isTomorrow) // true
+        assertTrue(Tempo.yesterday.isYesterday) // true
     }
 }

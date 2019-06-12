@@ -23,7 +23,7 @@ Tempo.yesterday                         //=> yesterday
 
 ```kotlin
 Tempo.with(year = 1990, month = 1, day = 21)    //=> 1990/01/21
-Tempo.with(year = 2019, month = 6, day = 26, hour = 18, minute = 58, second = 31, milliseconds = 777)
+Tempo.with(year = 2019, month = 6, day = 26, hour = 18, minute = 58, second = 31, millisecond = 777)
 ```
 
 ### Initialize by changing date components
@@ -33,8 +33,8 @@ Tempo.today.with(month = 12, day = 25)  //=> this year's christmas
 Date().with(month = 12, day = 25)       //=> this year's christmas
 
 // shortcuts
-Tempo.today.beginningOfYear     //=> new Year Day
-Tempo.today.endOfYear           //=> new Years Eve
+Tempo.today.beginningOfYear     //=> new year's day
+Tempo.today.endOfYear           //=> new year's eve
 ```
 
 ### Check day of the week / properties
