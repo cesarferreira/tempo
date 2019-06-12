@@ -47,6 +47,8 @@ Tempo.today.isThursday
 Tempo.today.isFriday
 Tempo.today.isSaturday
 Tempo.today.isSunday
+Tempo.today.isWeekend
+Tempo.today.isWeekday
 
 Tempo.today.isToday                   // true
 Tempo.tomorrow.isToday                // false

@@ -277,6 +277,41 @@ class DateExtensionsTest {
     }
 
     @Test
+    fun `is a Wednesday date a weekday?`() {
+        val date = Tempo.with(year = 2019, month = 6, day = 12)
+        date.isWednesday shouldBe true
+        date.isWeekend shouldBe false
+        date.isWeekday shouldBe true
+    }
+
+    @Test
+    fun `is a Thursday date a weekday?`() {
+        val date = Tempo.with(year = 2019, month = 6, day = 13)
+        date.isWednesday shouldBe false
+        date.isThursday shouldBe true
+        date.isWeekend shouldBe false
+        date.isWeekday shouldBe true
+    }
+
+    @Test
+    fun `is a Saturday date a weekend?`() {
+        val date = Tempo.with(year = 2019, month = 6, day = 15)
+        date.isWednesday shouldBe false
+        date.isSaturday shouldBe true
+        date.isWeekend shouldBe true
+        date.isWeekday shouldBe false
+    }
+
+    @Test
+    fun `is a Sunday date a weekend?`() {
+        val date = Tempo.with(year = 2019, month = 6, day = 15)
+        date.isWednesday shouldBe false
+        date.isSaturday shouldBe true
+        date.isWeekend shouldBe true
+        date.isWeekday shouldBe false
+    }
+
+    @Test
     fun compareTo() {
         run {
             assertTrue(1.day.ago < Tempo.today)

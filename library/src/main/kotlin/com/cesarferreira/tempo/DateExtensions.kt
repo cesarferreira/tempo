@@ -136,6 +136,12 @@ val Date.isSaturday: Boolean
         return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY
     }
 
+val Date.isWeekend: Boolean
+    get() = this.isSaturday || this.isSunday
+
+val Date.isWeekday: Boolean
+    get() = !this.isWeekend
+
 val Date.isToday: Boolean
     get() = isDateIn(this, 0)
 

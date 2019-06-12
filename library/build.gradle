@@ -15,7 +15,7 @@ publish {
     userOrg = 'cesarferreira'
     groupId = 'com.github.cesarferreira'
     artifactId = 'tempo'
-    publishVersion = '0.6.0'
+    publishVersion = '0.6.1'
     desc = 'Kotlin intuitive Date extensions.'
     website = 'https://github.com/cesarferreira/tempo'
 }
