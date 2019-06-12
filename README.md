@@ -6,39 +6,35 @@ Kotlin intuitive Date extensions.
 
 ## Usage
 
-### Add durations to date
-
 ```kotlin
-val today = Tempo.today
-val nextWeek = today + 1.week
-val dayBeforeYesterday = today - 2.days
+val today : Date = Tempo.today //=> today
+today + 1.week //=> next week 
+today - 2.days //=> day before yesterday
+today + (3.weeks - 4.days + 5.hours) //=> somewhere in 2 and a half weeks
 
-// shortcuts #1
-val tomorrow = Tempo.tomorrow
-val yesterday = Tempo.yesterday
-
-// shortcuts #2
-val yesterday = 1.days.ago
-val fiveYearsInTheFuture = 5.years.forward
+Tempo.tomorrow //=> tomorrow
+Tempo.yesterday //=> yesterday
+1.day.ago //=> yesterday
+3.weeks.ago //=> 3 weeks ago
+5.years.forward //=> five years in the future 
 ```
 
 ### Initialize by specifying date components
 
 ```kotlin
-val birthday = Tempo.with(year = 1990, month = 1, day = 21)
-val firstCommitDate = Tempo.with(year = 2019, month = 6, day = 26, hour = 18, minute = 58, second = 31, milliseconds = 777)
+Tempo.with(year = 1990, month = 1, day = 21) //=> 1990/01/21
+Tempo.with(year = 2019, month = 6, day = 26, hour = 18, minute = 58, second = 31, milliseconds = 777)
 ```
 
 ### Initialize by changing date components
 
 ```kotlin
-val today = Tempo.today
-val christmas = today.with(month = 12, day = 25)
-val thisSunday = today.with(weekday = 1)
+Tempo.today.with(month = 12, day = 25) //=> this year's christmas
+Date().with(month = 12, day = 25) //=> this year's christmas
 
 // shortcuts
-val newYearDay = today.beginningOfYear
-val newYearsEve = today.endOfYear
+Tempo.today.beginningOfYear //=> new Year Day
+Tempo.today.endOfYear //=> new Years Eve
 ```
 
 ### Check day of the week / properties
@@ -64,8 +60,8 @@ Tempo.yesterday.isYesterday           // true
 5.minutes.forward.toString("yyyy-MM-dd HH:mm:ss")
 //=> "2019-06-11 12:05:00"
 
-"1987-06-02".toDate("yyyy-MM-dd")
-//=> Tempo.with(year = 1987, month = 6, day = 2)
+"1988-03-02".toDate("yyyy-MM-dd")
+//=> Tempo.with(year = 1988, month = 3, day = 2)
 ```
 
 ### Compare dates
