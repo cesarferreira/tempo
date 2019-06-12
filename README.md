@@ -7,34 +7,34 @@ Kotlin intuitive Date extensions.
 ## Usage
 
 ```kotlin
-val today : Date = Tempo.today //=> today
-today + 1.week //=> next week 
-today - 2.days //=> day before yesterday
-today + (3.weeks - 4.days + 5.hours) //=> somewhere in 2 and a half weeks
+val today : Date = Tempo.today          //=> today
+today + 1.week                          //=> next week 
+today - 2.days                          //=> day before yesterday
+today + (3.weeks - 4.days + 5.hours)    //=> somewhere in 2 and a half weeks
 
-Tempo.tomorrow //=> tomorrow
-Tempo.yesterday //=> yesterday
-1.day.ago //=> yesterday
-3.weeks.ago //=> 3 weeks ago
-5.years.forward //=> five years in the future 
+Tempo.tomorrow                          //=> tomorrow
+Tempo.yesterday                         //=> yesterday
+1.day.ago                               //=> yesterday
+3.weeks.ago                             //=> 3 weeks ago
+5.years.forward                         //=> five years in the future 
 ```
 
 ### Initialize by specifying date components
 
 ```kotlin
-Tempo.with(year = 1990, month = 1, day = 21) //=> 1990/01/21
+Tempo.with(year = 1990, month = 1, day = 21)    //=> 1990/01/21
 Tempo.with(year = 2019, month = 6, day = 26, hour = 18, minute = 58, second = 31, milliseconds = 777)
 ```
 
 ### Initialize by changing date components
 
 ```kotlin
-Tempo.today.with(month = 12, day = 25) //=> this year's christmas
-Date().with(month = 12, day = 25) //=> this year's christmas
+Tempo.today.with(month = 12, day = 25)  //=> this year's christmas
+Date().with(month = 12, day = 25)       //=> this year's christmas
 
 // shortcuts
-Tempo.today.beginningOfYear //=> new Year Day
-Tempo.today.endOfYear //=> new Years Eve
+Tempo.today.beginningOfYear     //=> new Year Day
+Tempo.today.endOfYear           //=> new Years Eve
 ```
 
 ### Check day of the week / properties
