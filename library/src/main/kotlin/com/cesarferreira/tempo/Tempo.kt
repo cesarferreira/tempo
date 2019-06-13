@@ -9,7 +9,7 @@ import java.util.Date
  */
 object Tempo {
 
-    val today: Date
+    val now: Date
         get() = Date()
 
     val tomorrow: Date

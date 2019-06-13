@@ -17,7 +17,7 @@ class DateExtensionsTest {
         val calendar = Calendar.getInstance()
         calendar.add(Calendar.WEEK_OF_MONTH, 1)
         val nextWeek = calendar.time
-        assertEquals(expected = nextWeek, actual = Tempo.today + 1.week)
+        assertEquals(expected = nextWeek, actual = Tempo.now + 1.week)
     }
 
     @Test
@@ -25,7 +25,7 @@ class DateExtensionsTest {
         val calendar = Calendar.getInstance()
         calendar.add(Calendar.DAY_OF_MONTH, -2)
         val dayBeforeYesterday = calendar.time
-        assertEquals(expected = dayBeforeYesterday, actual = Tempo.today - 2.days)
+        assertEquals(expected = dayBeforeYesterday, actual = Tempo.now - 2.days)
     }
 
     @Test
@@ -260,13 +260,13 @@ class DateExtensionsTest {
 
     @Test
     fun `is date today?`() {
-        val date = Tempo.today
+        val date = Tempo.now
         date.isToday shouldBe true
     }
 
     @Test
     fun `is date yesterday?`() {
-        val date = Tempo.today - 1.day
+        val date = Tempo.now - 1.day
         date.isYesterday shouldBe true
     }
 
@@ -314,10 +314,10 @@ class DateExtensionsTest {
     @Test
     fun compareTo() {
         run {
-            assertTrue(1.day.ago < Tempo.today)
+            assertTrue(1.day.ago < Tempo.now)
         }
         run {
-            assertTrue(1.day.forward > Tempo.today)
+            assertTrue(1.day.forward > Tempo.now)
         }
     }
 
@@ -327,7 +327,7 @@ class DateExtensionsTest {
             assertTrue(1.day.ago > 2.days.ago)
         }
         run {
-            assertTrue(1.day.ago in 2.days.ago..Tempo.today)
+            assertTrue(1.day.ago in 2.days.ago..Tempo.now)
         }
     }
 }

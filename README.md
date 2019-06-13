@@ -7,10 +7,10 @@
 ## Usage
 
 ```kotlin
-val today: Date = Tempo.today           //=> today
-today + 1.week                          //=> next week 
-today - 2.days                          //=> day before yesterday
-today + (3.weeks - 4.days + 5.hours)    //=> somewhere in 2 and a half weeks
+val now: Date = Tempo.now               //=> now
+now + 1.week                            //=> next week 
+now - 2.days                            //=> day before yesterday
+now + (3.weeks - 4.days + 5.hours)      //=> somewhere in 2 and a half weeks
 
 Tempo.tomorrow                          //=> tomorrow
 Tempo.yesterday                         //=> yesterday
@@ -29,31 +29,31 @@ Tempo.with(year = 2019, month = 6, day = 26, hour = 18, minute = 58, second = 31
 ### Initialize by changing date components
 
 ```kotlin
-Tempo.today.with(month = 12, day = 25)  //=> this year's christmas
+Tempo.now.with(month = 12, day = 25)    //=> this year's christmas
 Date().with(month = 12, day = 25)       //=> this year's christmas
 
 // shortcuts
-Tempo.today.beginningOfYear     //=> new year's day
-Tempo.today.endOfYear           //=> new year's eve
+Tempo.now.beginningOfYear     //=> new year's day
+Tempo.now.endOfYear           //=> new year's eve
 ```
 
 ### Check day of the week / properties
 
 ```kotlin
-Tempo.today.isMonday
-Tempo.today.isTuesday
-Tempo.today.isWednesday
-Tempo.today.isThursday
-Tempo.today.isFriday
-Tempo.today.isSaturday
-Tempo.today.isSunday
-Tempo.today.isWeekend
-Tempo.today.isWeekday
+Tempo.now.isMonday
+Tempo.now.isTuesday
+Tempo.now.isWednesday
+Tempo.now.isThursday
+Tempo.now.isFriday
+Tempo.now.isSaturday
+Tempo.now.isSunday
+Tempo.now.isWeekend
+Tempo.now.isWeekday
 
-Tempo.today.isToday                   // true
-Tempo.tomorrow.isToday                // false
-Tempo.tomorrow.isTomorrow             // true
-Tempo.yesterday.isYesterday           // true
+Tempo.now.isToday                       // true
+Tempo.tomorrow.isToday                  // false
+Tempo.tomorrow.isTomorrow               // true
+Tempo.yesterday.isYesterday             // true
 ```
 
 ### Format and parse
@@ -70,7 +70,7 @@ Tempo.yesterday.isYesterday           // true
 
 ```kotlin
 1.day.ago > 2.days.ago                  // true
-1.day.ago in 2.days.ago..Tempo.today    // true
+1.day.ago in 2.days.ago..Tempo.now      // true
 ```
 
 ## Install

@@ -11,12 +11,12 @@ class DatesTest {
 
     @Test
     fun now() {
-        assertEquals(expected = Date(), actual = Tempo.today)
+        assertEquals(expected = Date(), actual = Tempo.now)
     }
 
     @Test
     fun today() {
-        assertEquals(expected = Date(), actual = Tempo.today)
+        assertEquals(expected = Date(), actual = Tempo.now)
     }
 
     @Test
